@@ -11,7 +11,7 @@ namespace MusicLibraryWebApi.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        protected ApplicationDbContext(DbContextOptions options)
+        public ApplicationDbContext(DbContextOptions options)
             : base(options)
         {
         }
