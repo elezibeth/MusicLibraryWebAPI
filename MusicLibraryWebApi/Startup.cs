@@ -30,7 +30,7 @@ namespace MusicLibraryWebApi
         {
 
             services.AddDbContext<ApplicationDbContext>(opts =>
-            opts.UseSqlServer(Configuration.GetConnectionString("(localdb)\\MSSQLLocalDB")));
+            opts.UseSqlServer(Configuration.GetConnectionString("sqlConnection")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
