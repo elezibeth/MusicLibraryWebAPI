@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MusicLibraryWebApi.Data;
+using MusicLibraryWebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,34 +24,54 @@ namespace MusicLibraryWebApi.Controllers
         }
         // GET: api/<SongController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Song> GetSongs()
         {
-            return new string[] { "value1", "value2" };
+            var songs = _context.Songs.ToList();
+            return songs;
         }
 
         // GET api/<SongController>/5
+   
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ActionResult<Song>> GetSong(int id)
         {
-            return "value";
+            var song = await _context.Songs.FindAsync(id);
+            return song;
+        }
+     
+
+        [HttpPost]
+        public IActionResult PostSong(Song song)
+        {
+            _context.Songs.Add(song);
+            _context.SaveChanges();
+
+            return CreatedAtAction("GetSong", new { id = song.Id }, song);
         }
 
-        // POST api/<SongController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
 
         // PUT api/<SongController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody]Song song)
         {
+
+            var songToEdit = _context.Songs.Where(s => s.Id == id).FirstOrDefault();
+            songToEdit = song;
+            _context.Update(songToEdit);
+            _context.SaveChanges();
+            return Ok(songToEdit);
+
         }
 
         // DELETE api/<SongController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var song = _context.Songs.Where(s => s.Id == id).FirstOrDefault();
+            _context.Songs.Remove(song);
+            _context.SaveChangesAsync();
+
+            return Ok(song);
         }
     }
 }
