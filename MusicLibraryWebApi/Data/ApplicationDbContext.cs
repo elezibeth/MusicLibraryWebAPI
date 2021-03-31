@@ -15,6 +15,8 @@ namespace MusicLibraryWebApi.Data
             : base(options)
         {
         }
+
+        public DbSet<Song> Songs { get; set; }
    
 
     }

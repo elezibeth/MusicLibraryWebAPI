@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 
 namespace MusicLibraryWebApi.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class SongController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private ApplicationDbContext _context;
+
         public SongController(ApplicationDbContext context)
         {
             _context = context;
