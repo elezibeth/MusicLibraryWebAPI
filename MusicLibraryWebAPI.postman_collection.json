@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "f9ed1989-7848-4338-a56c-06e40eae51a6",
+		"name": "MusicLibraryWebAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44394/api/Song/GetSongs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44394/api/Song/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44394",
+					"path": [
+						"api",
+						"Song",
+						"5"
+					]
+				},
+				"description": "Get all songs from database."
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44394/api/Song",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"hellssffo\",\r\n  \"artist\": \"gbdye\",\r\n  \"album\": \"wddho\",\r\n  \"releaseDate\": \"2021-03-31T18:42:25.499Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44394/api/Song",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44394",
+					"path": [
+						"api",
+						"Song"
+					]
+				},
+				"description": "post song"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44394/api/Song/8",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 8,\r\n    \"title\": \"American Pie change\",\r\n    \"artist\": \"Don McClean\",\r\n    \"album\": \"American Pie\",\r\n    \"releaseDate\": \"1971-03-31T18:42:25.499Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44394/api/Song/8",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44394",
+					"path": [
+						"api",
+						"Song",
+						"8"
+					]
+				},
+				"description": "put/change"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44394/api/Song/9",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44394/api/Song/9",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44394",
+					"path": [
+						"api",
+						"Song",
+						"9"
+					]
+				},
+				"description": "delete"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44394/api/Song/GetSongs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44394/api/Song/GetSongs",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44394",
+					"path": [
+						"api",
+						"Song",
+						"GetSongs"
+					]
+				},
+				"description": "get all songs"
+			},
+			"response": []
+		}
+	]
+}
